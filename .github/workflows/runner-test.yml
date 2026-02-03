@@ -20,4 +20,4 @@ jobs:
       - name: Run Kyvos Import Script
         run: |
           cd /home/impadmin/CICD_Utility_2023.5R3
-          ./ImportKyvosEntities.sh
+          ./ImportKyvosEntities.sh /home/impadmin/CICD_Utility_2023.5R3/GitRepo/automation/KyvosEntities/
