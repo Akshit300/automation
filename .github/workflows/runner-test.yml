@@ -1,0 +1,23 @@
+name: Kyvos Import CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  import-job:
+    runs-on: self-hosted   # IMPORTANT
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x /home/impadmin/CICD_Utility_2023.5R3/ImportKyvosEntities.sh
+
+      - name: Run Kyvos Import Script
+        run: |
+          cd /home/impadmin/CICD_Utility_2023.5R3
+          ./ImportKyvosEntities.sh
